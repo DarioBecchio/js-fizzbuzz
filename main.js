@@ -1,20 +1,26 @@
 //console.log('funziona');
 //definisco la variabile per il container dove andranno le card
-let containerEl = document.querySelector('.container > #play_game');
+let containerEl = (document.querySelector('.container > #play_game'));
 //definisco le card da inserire
-let fizz = `<div class="col"><div class="p-3 border bg-light">FIZZ</div></div>`
-let buzz = `<div class="col"><div class="p-3 border bg-light">BUZZ</div></div>`
-let fizz_buzz = `<div class="col"><div class="p-3 border bg-light">FIZZBUZZ</div></div>`
-let nothing = `<div class="col"><div class="p-3 border bg-light"></div></div>`
-for (let i = 0 ; i <= 100 ; i++) {
+/*
+
+
+
+*/
+for (let i = 1 ; i <= 100 ; i++) {
     console.log(i);
-    if ( i / 3 == 0 && i / 5 == 0) {
-        containerEl.innerHTML(fizz_buzz).anchor
-        } elseif (i / 3 == 0) {
-            containerEl.innerHTML(fizz).anchor    
-            } elseif (i / 5 == 0) {
-                containerEl.innerHTML(fizz).anchor
+    if ( i % 3 === 0 && i % 5 === 0) {
+        let fizz_buzz = `<div class="col"><div class="p-5 border bg-danger"> FIZZBUZZ </div></div>`;
+        containerEl.innerHTML += fizz_buzz ;
+        } else if (i % 3 === 0) {
+            let fizz = `<div class="col"><div class="p-5 border bg-warning"> FIZZ </div></div>`;
+            containerEl.innerHTML += fizz ;    
+            } else if (i % 5 === 0) {
+                let buzz = `<div class="col"><div class="p-5 border bg-success"> BUZZ </div></div>`;
+                containerEl.innerHTML += buzz ;               
                 } else {
-                    containerEl.innerHTML(nothing).anchor
+                    let nothing = `<div class="col"><div class="p-5 border bg-light">${i}</div></div>`;
+                    containerEl.innerHTML += nothing
                         }
+    
                     }
